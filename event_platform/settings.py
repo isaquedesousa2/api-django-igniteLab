@@ -8,7 +8,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool) 
 
-ALLOWED_HOSTS = ['153.92.209.217']
+ALLOWED_HOSTS = ['153.92.209.217','isaquedesousa.com.br', 'isaquedesousa.com']
 
 
 INSTALLED_APPS = [
@@ -61,10 +61,10 @@ DATABASES = {
     'default': {
         'ENGINE': config('DATABASE_ENGINE'),
         'NAME': config('DATABASE_NAME'),
-        'USER': config('DATABASE_USER'),
-        'PASSWORD': config('DATABASE_PASSWORD'),
-        'HOST': config('DATABASE_HOST'),
-        'PORT': config('DATABASE_PORT'),
+        #'USER': config('DATABASE_USER'),
+        #'PASSWORD': config('DATABASE_PASSWORD'),
+        #'HOST': config('DATABASE_HOST'),
+        #'PORT': config('DATABASE_PORT'),
     }
 }
 
