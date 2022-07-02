@@ -8,7 +8,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool) 
 
-ALLOWED_HOSTS = ['153.92.209.217','isaquedesousa.com.br', 'isaquedesousa.com']
+ALLOWED_HOSTS = ['153.92.209.217','isaquedesousa.com.br', 'isaquedesousa.com', '127.0.0.1',]
 
 
 INSTALLED_APPS = [
