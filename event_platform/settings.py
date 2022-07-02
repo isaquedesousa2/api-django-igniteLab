@@ -1,12 +1,16 @@
 import os
 from pathlib import Path
-from decouple import config
+from dotenv import load_dotenv
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = config('DEBUG', default=False, cast=bool) 
+if os.getenv('DEBUG') == '1':
+    DEBUG = True
+elif os.getenv('DEBUG') == '0':
+    DEBUG = False
 
 ALLOWED_HOSTS = ['153.92.209.217','isaquedesousa.com.br', 'isaquedesousa.com', '127.0.0.1',]
 
@@ -60,8 +64,8 @@ WSGI_APPLICATION = 'event_platform.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': config('DATABASE_ENGINE'),
-        'NAME': config('DATABASE_NAME'),
+        'ENGINE': os.getenv('DATABASE_ENGINE'),
+        'NAME': os.getenv('DATABASE_NAME'),
         #'USER': config('DATABASE_USER'),
         #'PASSWORD': config('DATABASE_PASSWORD'),
         #'HOST': config('DATABASE_HOST'),
