@@ -1,6 +1,5 @@
-<h1 align="center">Brookin</h1>
-<p align="center">Um pequeno projeto realizado com base no <a href="https://brainly.com.br/">Brainly</a> para testa e melhorar meus conhecimentos sobre Python e Django
-<p>
+<h1 align="center">API Django - Ignite Lab</h1>
+<p align="center">API feita em django para fornecer dados para aplicação React do <a href="https://github.com/isaquedesousa2/Ignite-lab-react">Ignite Lab</a><p>
 
 <p align="center">
     <a href="#pre-requisitos">Pré-Requisitos</a> •
@@ -9,15 +8,14 @@
     <a href="#autor">Autor</a>
 <p>
 
-![Brookin-Opera-2022-07-06-21-09-17 (1)](https://user-images.githubusercontent.com/72584838/177665899-31ae0f7d-e79b-4c3f-a8a2-9fd81a161e04.gif)
-
-
 <h3 id="pre-requisitos">
 
 ## Pré-Requisitos
 </h3>
 Antes de começar, você vai precisar ter instalado em sua máquina as seguinte ferramentas: <a href="https://git-scm.com" target="_blank">Git</a>, <a href="https://www.python.org/downloads/" target="_blank">Python</a>. <br>
-Além disto, é bom ter um editor para trabalhar com o código, como o <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>.
+Além disto, é bom ter um editor para trabalhar com o código, como o <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>.<br />
+A API pode ser visualizada em http://127.0.0.1:8000/api/v1/aulas/ após o servidor ser iniciado, para melhor experiência clone o repositório <a href="https://github.com/isaquedesousa2/Ignite-lab-react">Ignite Lab</a> para consumir a API.
+
 
 <br />
 <h3 id="rodando-a-aplicacao">
@@ -28,11 +26,11 @@ Além disto, é bom ter um editor para trabalhar com o código, como o <a href="
 
 ### Clone o repositório
 ```
-git clone https://github.com/isaquedesousa2/Brookin.git
+git clone https://github.com/isaquedesousa2/api-django-igniteLab.git
 ```
 ### Acesse a pasta do projeto no terminal
 ```
-cd Brookin
+cd backend
 ```
 ### Instale o ambiente virtual
 ```
@@ -47,10 +45,6 @@ venv/Scripts/Activate (Windows)
 ```
 python -r requirements.txt
 ```
-### Faça as migrações
-```
-python manage.py migrate
-```
 ### Execute o servidor 
 ```
 python manage.py runserver
@@ -63,7 +57,7 @@ python manage.py runserver
 As seguintes ferramentas foram utilizadas na construção deste projeto:
 
 ### [Django](https://www.djangoproject.com/)
-### [Bootstrap](https://getbootstrap.com/)
+### [Django Rest Framework](https://www.django-rest-framework.org/)
 
 <br />
 
