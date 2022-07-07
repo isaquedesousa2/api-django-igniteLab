@@ -1,18 +1,13 @@
 import os
 from pathlib import Path
-from dotenv import load_dotenv
-load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'django-insecure-m7cj&_9*8386^6+qf2ras-2bt9=l6=d83eun4pn$qb71xqqtcd'
 
-if os.getenv('DEBUG') == '1':
-    DEBUG = True
-elif os.getenv('DEBUG') == '0':
-    DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['153.92.209.217','isaquedesousa.com.br', 'isaquedesousa.com', '127.0.0.1',]
+ALLOWED_HOSTS = ['*']
 
 
 INSTALLED_APPS = [
@@ -24,6 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'lessons',
     'rest_framework',
+    "corsheaders",
     'home'
 ]
 
@@ -36,6 +32,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "django.middleware.common.CommonMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = 'event_platform.urls'
@@ -64,8 +61,8 @@ WSGI_APPLICATION = 'event_platform.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DATABASE_ENGINE'),
-        'NAME': os.getenv('DATABASE_NAME'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
         #'USER': config('DATABASE_USER'),
         #'PASSWORD': config('DATABASE_PASSWORD'),
         #'HOST': config('DATABASE_HOST'),
@@ -125,5 +122,16 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ),
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.JSONParser',
     )
 }
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:8000",
+]
